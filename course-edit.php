@@ -25,7 +25,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
-    <?php echo $SystemName; ?> | Edit | Delete Blog
+    <?php echo $SystemName; ?> | Edit | Delete Course
   </title>
   <?php 
 		include 'inc/inc.meta.php';
@@ -63,7 +63,8 @@
                 $_SESSION['courseId'] = $id;
                 $_SESSION['courseThumbnail'] = $thumbnail;
               ?>
-              <button type="submit" class="btn btn-danger btn-block btn-flat" name="btn-delete-course" id="btn-delete-course">
+              <button type="submit" class="btn btn-danger btn-block btn-flat" name="btn-delete-course"
+                id="btn-delete-course">
                 Delete Course
               </button>
             </div>
@@ -79,14 +80,16 @@
                   <div class="col-md-8">
                     <div class="form-group">
                       <label>Title</label>
-                      <input type="text" class="form-control" placeholder="Title of the Course" name="title" id="title" value="<?php echo $title; ?>">
+                      <input type="text" class="form-control" placeholder="Title of the Course" name="title" id="title"
+                        value="<?php echo $title; ?>">
                       <span class="help-block" id="error"></span>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
                       <label>Duration</label>
-                      <input type="text" class="form-control" placeholder="How long will the course take" name="duration" id="duration" value="<?php echo $duration; ?>">
+                      <input type="text" class="form-control" placeholder="How long will the course take"
+                        name="duration" id="duration" value="<?php echo $duration; ?>">
                       <span class="help-block" id="error"></span>
                     </div>
                   </div>
@@ -124,7 +127,8 @@
 
                   <div class="col-md-3">
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-edit-course" id="btn-edit-course" value="btn-edit-course">
+                      <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-edit-course"
+                        id="btn-edit-course" value="btn-edit-course">
                         Edit Course
                       </button>
                     </div>

@@ -17,6 +17,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
       $blogTitle = $row['blog_title'];
       $blogBody = $row['blog_body'];
       $isActive = $row['isActive'];
+      $thumbnail = $row['thumbnail'];
     }
   }else {
     header("Location: blog-view");
@@ -75,12 +76,14 @@ else
                 <div class="col-md-12">
                   <?php 
                     $_SESSION['blogId'] = $id;
+                    $_SESSION['blogThumbnail'] = $thumbnail;
                   ?>
                   <?php 
                     if($isActive == 'Y') {
                       ?>
                   <div class="col-md-6">
-                    <button type="submit" class="btn btn-warning btn-block btn-flat" name="btn-deactivate-blog" id="btn-deactivate-blog">
+                    <button type="submit" class="btn btn-warning btn-block btn-flat" name="btn-deactivate-blog"
+                      id="btn-deactivate-blog">
                       Deactivate
                     </button>
                   </div>
@@ -88,7 +91,8 @@ else
                     } else if($isActive == 'N') {
                       ?>
                   <div class="col-md-6">
-                    <button type="submit" class="btn btn-success btn-block btn-flat" name="btn-activate-blog" id="btn-activate-blog">
+                    <button type="submit" class="btn btn-success btn-block btn-flat" name="btn-activate-blog"
+                      id="btn-activate-blog">
                       Activate
                     </button>
                   </div>
@@ -96,7 +100,8 @@ else
                     }
                   ?>
                   <div class="col-md-6">
-                    <button type="submit" class="btn btn-danger btn-block btn-flat" name="btn-delete-blog" id="btn-delete-blog">
+                    <button type="submit" class="btn btn-danger btn-block btn-flat" name="btn-delete-blog"
+                      id="btn-delete-blog">
                       Delete
                     </button>
                   </div>
@@ -138,7 +143,7 @@ else
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form method="post" id="edit-blog-form">
+              <form method="post" enctype="multipart/form-data" id="edit-blog-form">
                 <div id="errorDiv">
                   <!-- error will be shown here ! -->
                 </div>
@@ -146,7 +151,8 @@ else
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Title</label>
-                      <input type="text" class="form-control" placeholder="Title of the blog" name="blogTitle" id="blogTitle" value="<?php echo $blogTitle; ?>">
+                      <input type="text" class="form-control" placeholder="Title of the blog" name="blogTitle"
+                        id="blogTitle" value="<?php echo $blogTitle; ?>">
                       <span class="help-block" id="error"></span>
                     </div>
                   </div>
@@ -161,17 +167,32 @@ else
                   </div>
                   <div>
                     <input type="hidden" name="blogId" id="blogId" value="<?php echo $id; ?>" />
+                    <input type="hidden" name="blogThumbnail" value="<?php echo $thumbnail; ?>" />
                   </div>
 
+                  <div class="col-md-12">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label>Current Thumbnail</label>
+                        <img src="uploads/blog_thumbnails/<?php echo $thumbnail; ?>" height="100px" width="180px" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>New Thumbnail?</label>
+                      <input type="file" class="form-control" name="thumbnail" id="thumbnail" accept="image/*">
+                      <span class="help-block" id="error"></span>
+                    </div>
+                  </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-create-blog" id="btn-create-blog">
+                      <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-create-blog"
+                        id="btn-create-blog">
                         Edit Blog
                       </button>
                     </div>
                   </div>
-
-
                 </div>
 
                 <div class="col-md-12" id="blogBodyWrapper">
@@ -195,7 +216,7 @@ else
   <script src="ckeditor/ckeditor.js"></script>
   <script src="ckeditor/adapters/jquery.js"></script>
   <script>
-    $('#blogBody').ckeditor();
+  $('#blogBody').ckeditor();
   </script>
   <script type="text/javascript" src="ajax-js/blog-edit.js"></script>
   <script type="text/javascript" src="ajax-js/blog-delete.js"></script>

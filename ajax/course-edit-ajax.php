@@ -23,7 +23,7 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
 
     $response = array();
 
-    if(empty($imgFile)){
+    if(empty($imgFile)){ 
       $sql = $common -> Update("
         UPDATE tbl_course
         SET
@@ -43,7 +43,6 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
     }else {
       
       $upload_dir = '../uploads/course_thumbnails/'; // upload directory
-   
       $imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION)); // get image extension
       
       // valid image extensions

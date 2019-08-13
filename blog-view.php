@@ -38,7 +38,7 @@
         <!-- SELECT2 EXAMPLE -->
         <div class="box box-default">
           <div class="box-header with-border">
-            <h3 class="box-title">My Blogs</h3>
+            <h3 class="box-title">Blogs</h3>
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
             </div>
@@ -48,7 +48,8 @@
             <table id="tbl-blogs" class="table table-striped table-bordered" cellspacing="0" width="100%">
               <thead>
                 <tr>
-                  <th>Blog</th>
+                  <th>Thumbnail</th>
+                  <th></th>
                   <th>Status</th>
                   <th>Actions</th>
                 </tr>
@@ -56,7 +57,7 @@
             </table>
           </div>
 
-          </div>
+        </div>
       </section>
 
 
@@ -75,21 +76,24 @@
 
   <!-- Show Data Table -->
   <script type="text/javascript">
-    $(document).ready(function() {
-      $('#tbl-blogs').DataTable({
-        "ajax": "ajax/blog-view-datatable-ajax.php",
-        "columns": [{
-            "data": "blog"
-          },
-          {
-            "data": "status"
-          },
-          {
-            "data": "actions"
-          }
-        ]
-      });
+  $(document).ready(function() {
+    $('#tbl-blogs').DataTable({
+      "ajax": "ajax/blog-view-datatable-ajax.php",
+      "columns": [{
+          "data": "thumbnail"
+        },
+        {
+          "data": "blog"
+        },
+        {
+          "data": "status"
+        },
+        {
+          "data": "actions"
+        }
+      ]
     });
+  });
   </script>
 
 </body>

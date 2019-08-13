@@ -16,7 +16,7 @@
     <?php echo $SystemName; ?> | All Blogs
   </title>
   <?php 
-		include 'inc/inc.meta.php';
+		include 'inc/inc.meta.php'; 
   ?>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
 </head>
@@ -55,6 +55,7 @@
             <table id="tbl-blogs" class="table table-striped table-bordered" cellspacing="0" width="100%">
               <thead>
                 <tr>
+                  <th>Thumbnail</th>
                   <th></th>
                   <th>Status</th>
                   <th>Actions</th>
@@ -82,21 +83,24 @@
 
   <!-- Show Data Table -->
   <script type="text/javascript">
-    $(document).ready(function() {
-      $('#tbl-blogs').DataTable({
-        "ajax": "ajax/blog-view-all-datatable-ajax.php",
-        "columns": [{
-            "data": "blog"
-          },
-          {
-            "data": "status"
-          },
-          {
-            "data": "actions"
-          }
-        ]
-      });
+  $(document).ready(function() {
+    $('#tbl-blogs').DataTable({
+      "ajax": "ajax/blog-view-all-datatable-ajax.php",
+      "columns": [{
+          "data": "thumbnail"
+        },
+        {
+          "data": "blog"
+        },
+        {
+          "data": "status"
+        },
+        {
+          "data": "actions"
+        }
+      ]
     });
+  });
   </script>
 
 </body>

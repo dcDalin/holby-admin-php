@@ -30,7 +30,7 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          Blogs
+          Courses
         </h1>
       </section>
       <!-- Main content -->
@@ -77,27 +77,27 @@
 
   <!-- Show Data Table -->
   <script type="text/javascript">
-    $(document).ready(function() {
-      $('#tbl-blogs').DataTable({
-        "ajax": "ajax/course-view-all-datatable-ajax.php",
-        "columns": [{
-            "data": "thumbnail"
-          },
-          {
-            "data": "title"
-          },
-          {
-            "data": "duration"
-          },
-          {
-            "data": "level"
-          },
-          {
-            "data": "actions"
-          }
-        ]
-      });
+  $(document).ready(function() {
+    $('#tbl-blogs').DataTable({
+      "ajax": "ajax/course-view-all-datatable-ajax.php",
+      "columns": [{
+          "data": "thumbnail"
+        },
+        {
+          "data": "title"
+        },
+        {
+          "data": "duration"
+        },
+        {
+          "data": "level"
+        },
+        {
+          "data": "actions"
+        }
+      ]
     });
+  });
   </script>
 
 </body>

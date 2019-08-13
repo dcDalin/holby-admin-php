@@ -21,6 +21,11 @@ if (!in_array($_SESSION['userEmail'], $SUPER_USER_EMAIL)) {
     if($sql){
       $response['status'] = 'success'; 
       $response['message'] = 'Blog successfuly deleted. Redirecting...'; 
+
+      $thumb = $_SESSION['blogThumbnail'];
+
+      unlink("../uploads/blog_thumbnails/$thumb");
+
     }else if(!$sql){
       $response['status'] = 'error'; 
       $response['message'] = 'Could not delete the blog'; 

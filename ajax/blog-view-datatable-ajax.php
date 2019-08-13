@@ -14,8 +14,8 @@
     SELECT COUNT(*) FROM tbl_blog WHERE blogger_id='".$_SESSION['UID']."'
   ");
 
-  // if user got no blogs 
-  if($total_rows < 1){
+  // if user got no blogs  
+  if($total_rows < 1){ 
     $blog_arr[] = array(
       "blog" => '<strong>You have no blogs...</strong>', 
       "status" => '',
@@ -29,6 +29,7 @@
     $blogTitle = $row['blog_title'];
     $blogBody = $row['blog_body'];
     $isActive = $row['isActive'];
+    $thumbnail = $row['thumbnail'];
 
     if ($isActive == 'Y'){
       $status = 'Active';
@@ -37,12 +38,15 @@
     }
 
     if (strlen($blogBody) > 25) {
-      $trimBlogBody = substr($blogBody, 0, 200). '...';
+      $trimBlogBody = substr($blogBody, 0, 100). '...';
     } else {
       $trimBlogBody = $blogBody;
     }
- 
+    
     $blog_arr[] = array(
+      "thumbnail" => '
+        <img src="uploads/blog_thumbnails/'.$thumbnail.'" height="100px" width="80px" />
+      ',
       "blog" => '
         <strong>'.$blogTitle.'</strong>
         <p>'.$trimBlogBody.'</p>

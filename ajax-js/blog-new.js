@@ -1,6 +1,9 @@
 $("document").ready(function() {
   $("#new-blog-form").validate({
     rules: {
+      thumbnail: {
+        required: true
+      },
       blogTitle: {
         required: true,
         minlength: 50
@@ -11,6 +14,9 @@ $("document").ready(function() {
       }
     },
     messages: {
+      thumbnail: {
+        required: "Thumbnail is required"
+      },
       blogTitle: {
         required: "What is the blog title?",
         minlength: "Blog title should be at least 50 characters"
@@ -41,70 +47,65 @@ $("document").ready(function() {
         .find(".help-block")
         .html("");
     },
-    submitHandler: submitForm
-  });
-
-  function submitForm() {
-    $.ajax({
-      url: "ajax/blog-new-ajax.php",
-      type: "POST",
-      data: $("#new-blog-form").serialize(),
-      dataType: "json",
-      beforeSend: function() {
-        $("#blogBodyWrapper").slideUp("fast");
-        $("#btn-create-blog")
-          .html(
-            '<img src="ajax-loader.gif" style="margin: auto; width:10%;"> &nbsp; Working...'
-          )
-          .prop("disabled", true);
-        $("input, textarea").prop("disabled", true);
-      }
-    })
-      .done(function(data) {
-        $("#blogBodyWrapper").slideUp("fast");
-        $("#btn-create-blog")
-          .html(
-            '<img src="ajax-loader.gif" style="margin: auto; width:10%;"> &nbsp; Processing...'
-          )
-          .prop("disabled", true);
-        $("input, textarea").prop("disabled", true);
-
-        setTimeout(function() {
-          if (data.status === "success") {
-            $("#errorDiv")
-              .slideDown("fast", function() {
-                $("#errorDiv").html(
-                  '<div class="alert alert-success">' + data.message + "</div>"
-                );
-                $("#new-blog-form").trigger("reset");
-                $("input, textarea").prop("disabled", false);
-                $("#blogBodyWrapper").slideDown("fast");
-              })
-              .delay(3000)
-              .slideUp("fast");
-            $("#btn-create-blog")
-              .html("Post Blog")
-              .prop("disabled", false);
-          } else {
-            $("#errorDiv")
-              .slideDown("fast", function() {
-                $("#errorDiv").html(
-                  '<div class="alert alert-error">' + data.message + "</div>"
-                );
-                $("input, textarea").prop("disabled", false);
-              })
-              .delay(3000)
-              .slideUp("fast");
-            $("#btn-create-blog")
-              .html("Post Blog")
-              .prop("disabled", false);
-            $("#blogBodyWrapper").slideDown("fast");
-          }
-        }, 3000);
+    submitHandler: function(form) {
+      var formData = new FormData(form);
+      $.ajax({
+        url: "ajax/blog-new-ajax.php",
+        type: "POST",
+        data: formData,
+        dataType: "json",
+        processData: false,
+        contentType: false
       })
-      .fail(function() {
-        $("#new-blog-form").trigger("reset");
-        alert("An unknown error occoured, Please try again Later...");
-      });
-  }
+        .done(function(data) {
+          $("#blogBodyWrapper").slideUp("fast");
+          $("#btn-create-blog")
+            .html(
+              '<img src="ajax-loader.gif" style="margin: auto; width:10%;"> &nbsp; Processing...'
+            )
+            .prop("disabled", true);
+          $("input, textarea").prop("disabled", true);
+
+          setTimeout(function() {
+            if (data.status === "success") {
+              $("#errorDiv")
+                .slideDown("fast", function() {
+                  $("#errorDiv").html(
+                    '<div class="alert alert-success">' +
+                      data.message +
+                      "</div>"
+                  );
+                  $("#new-blog-form").trigger("reset");
+                  $("input, textarea").prop("disabled", false);
+                  $("#blogBodyWrapper").slideDown("fast");
+                })
+                .delay(3000)
+                .slideUp("fast");
+              $("#btn-create-blog")
+                .html("Post Blog")
+                .prop("disabled", false);
+            } else {
+              $("#errorDiv")
+                .slideDown("fast", function() {
+                  $("#errorDiv").html(
+                    '<div class="alert alert-error">' + data.message + "</div>"
+                  );
+                  $("input, textarea").prop("disabled", false);
+                })
+                .delay(3000)
+                .slideUp("fast");
+              $("#btn-create-blog")
+                .html("Post Blog")
+                .prop("disabled", false);
+              $("#blogBodyWrapper").slideDown("fast");
+            }
+          }, 3000);
+        })
+        .fail(function(err) {
+          console.log(JSON.stringify(err));
+          $("#new-blog-form").trigger("reset");
+          alert("An unknown error occoured, Please try again Later...");
+        });
+    }
+  });
 });

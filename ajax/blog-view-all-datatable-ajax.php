@@ -10,7 +10,7 @@
   $results = $common -> GetRows("
     SELECT
       tbl_admin.id, tbl_admin.firstName, tbl_admin.lastName,
-      tbl_blog.id AS blog_id, tbl_blog.blogger_id, tbl_blog.blog_title, tbl_blog.blog_body, tbl_blog.isActive
+      tbl_blog.id AS blog_id, tbl_blog.thumbnail, tbl_blog.blogger_id, tbl_blog.blog_title, tbl_blog.blog_body, tbl_blog.isActive
 
     FROM 
       tbl_admin, tbl_blog
@@ -27,6 +27,7 @@
     $blogTitle = $row['blog_title'];
     $blogBody = $row['blog_body'];
     $isActive = $row['isActive'];
+    $thumbnail = $row['thumbnail'];
 
 
     if ($isActive == 'Y'){
@@ -36,12 +37,15 @@
     }
 
     if (strlen($blogBody) > 25) {
-      $trimBlogBody = substr($blogBody, 0, 200). '...';
+      $trimBlogBody = substr($blogBody, 0, 100). '...';
     } else {
       $trimBlogBody = $blogBody;
     }
 
     $blog_arr[] = array(
+      "thumbnail" => '
+        <img src="uploads/blog_thumbnails/'.$thumbnail.'" height="100px" width="80px" />
+      ',
       "blog" => '
         <strong>'.$blogTitle.'</strong> 
         <p>'.$trimBlogBody.'</p>

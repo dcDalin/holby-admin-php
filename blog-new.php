@@ -52,22 +52,33 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
+                    <label>Thumbnail</label>
+                    <input type="file" class="form-control" name="thumbnail" id="thumbnail" accept="image/*"
+                      value="<?php echo $thumbnail; ?>">
+                    <span class="help-block" id="error"></span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
                     <label>Title</label>
-                    <input type="text" class="form-control" placeholder="Title of the blog" name="blogTitle" id="blogTitle">
+                    <input type="text" class="form-control" placeholder="Title of the blog" name="blogTitle"
+                      id="blogTitle">
                     <span class="help-block" id="error"></span>
                   </div>
                 </div>
                 <div class="col-md-12" id="blogBodyWrapper">
                   <div class="form-group">
                     <label>Blog Body</label>
-                    <textarea class="required form-control" name="blogBody" id="blogBody" rows="10" cols="80"></textarea>
+                    <textarea class="required form-control" name="blogBody" id="blogBody" rows="10"
+                      cols="80"></textarea>
                     <span class="help-block" id="error"></span>
                   </div>
                 </div>
 
                 <div class="col-md-3">
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-create-blog" id="btn-create-blog">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-create-blog"
+                      id="btn-create-blog">
                       Post Blog
                     </button>
                   </div>
@@ -95,7 +106,7 @@
   <script src="ckeditor/ckeditor.js"></script>
   <script src="ckeditor/adapters/jquery.js"></script>
   <script>
-    $('#blogBody').ckeditor();
+  $('#blogBody').ckeditor();
   </script>
   <script type="text/javascript" src="ajax-js/blog-new.js"></script>
 

@@ -10,8 +10,8 @@ if($_SESSION['UID'] == ''){
 
 /* Start ajax login process */
 
-  try {
-    $id = intval($_SESSION['courseId']);
+  try { 
+    $id = intval($_SESSION['courseId']); 
     $response = array();
 
     $sql = $common -> Delete("
