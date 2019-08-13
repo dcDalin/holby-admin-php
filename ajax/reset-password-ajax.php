@@ -31,9 +31,6 @@ if(filter_has_var(INPUT_POST, 'btn-reset-pass')){
         UPDATE tbl_admin SET tokenCode = '".$code."' WHERE email='".$email."'
       ");
       if(!$updateTokenCode){
-        $response['status'] = 'success'; // Log in successful
-        $response['message'] = 'Check your email for reset link'; 
-
         $message= "
           Hello $userFirstName
           <br /><br />
@@ -41,13 +38,19 @@ if(filter_has_var(INPUT_POST, 'btn-reset-pass')){
           <br /><br />
           Click Following Link To Reset Your Password 
           <br /><br />
-          <a href='$WEBSITE_URL/resetpass?id=$id&code=$code'>click here to reset your password</a>
+          <a href='$WEBSITE_URL/resetpass?id=$id&code=$code'>Click here to reset your password.</a>
           <br /><br />
-          thank you :)
         ";
         $subject = "Password Reset";
 
-        send_mail2($email,$message,$subject,$EMAIL_USERNAME,$EMAIL_PASSWORD);
+        $sendMail = send_mail2($email,$message,$subject,$EMAIL_USERNAME,$EMAIL_PASSWORD, $EMAIL_HOST, $EMAIL_PORT);
+        if($sendMail == 1){
+          $response['status'] = 'success'; 
+          $response['message'] = 'Check your email for reset link';
+        }else {
+          $response['status'] = 'error'; 
+          $response['message'] = 'Could not send email';
+        }
       }else{
         $response['status'] = 'unknown'; // Log in successful
         $response['message'] = 'Unknown error occured'; 

@@ -11,10 +11,10 @@
 		public function CCStrip($value) {
 			if(get_magic_quotes_gpc() != 0) {
 				if(is_array($value)) {  
-				  	foreach($value as $key=>$val)
+					foreach($value as $key=>$val)
 						$value[$key] = stripslashes($val);
 				}else{
-				  	$value = stripslashes($value);
+					$value = stripslashes($value);
 				}
 			}
 			return $value;
@@ -123,7 +123,7 @@
 			$mail->SMTPDebug  = 2;                     
 			$mail->SMTPAuth   = true;                  
 			$mail->SMTPSecure = "ssl";                 
-			$mail->Host       = "smtp.gmail.com";      
+			$mail->Host       = $EMAIL_HOST;      
 			$mail->Port       = 465;             
 			$mail->AddAddress($email);
 			$mail->Username=$EMAIL_USERNAME;  
@@ -137,12 +137,12 @@
 		}
 		//removing quotes
 		function mysql_escape_mimic($inp) { 
-		    if(is_array($inp)) {  
-		        return array_map(__METHOD__, $inp); 
-		    }
-		    if(!empty($inp) && is_string($inp)) { 
-		        return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $inp); 
-		    } 
+			if(is_array($inp)) {  
+				return array_map(__METHOD__, $inp); 
+			}
+			if(!empty($inp) && is_string($inp)) { 
+				return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $inp); 
+			} 
 			return $inp; 
 		} 
 		

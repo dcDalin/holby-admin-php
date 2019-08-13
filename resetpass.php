@@ -1,5 +1,5 @@
 <?php  
-    //session_start();
+    session_start();
     header('Cache-control: private'); // IE 6 FIX
     // always modified 
     header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
@@ -72,7 +72,8 @@
             include 'inc/inc.meta.php';
         ?>
   <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
 <body class="hold-transition login-page">
@@ -118,86 +119,89 @@
     ?>
 
   <script type="text/javascript">
-    // valid email pattern
-    var eregex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  // valid email pattern
+  var eregex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-    $.validator.addMethod("validemail", function(value, element) {
-      return this.optional(element) || eregex.test(value);
+  $.validator.addMethod("validemail", function(value, element) {
+    return this.optional(element) || eregex.test(value);
+  });
+
+  $('document').ready(function() {
+    /* validation */
+    $("#reset-pass-form").validate({
+      rules: {
+        password: {
+          required: true,
+          minlength: 6,
+          maxlength: 15
+        },
+        cpassword: {
+          required: true,
+          equalTo: "#password"
+        },
+      },
+      messages: {
+        password: {
+          required: "Please enter your new password.",
+          minlength: "Password should be at least 6 characters",
+          maxlength: "Password should be less than 15"
+        },
+        cpassword: {
+          required: "Please retype your password.",
+          equalTo: "Passwords don't match"
+        },
+      },
+      errorPlacement: function(error, element) {
+        $(element).closest('.form-group').find('.help-block').html(error.html());
+      },
+      highlight: function(element) {
+        $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).closest('.form-group').removeClass('has-error');
+        $(element).closest('.form-group').find('.help-block').html('');
+      },
+      submitHandler: submitForm
     });
+    /* validation */
 
-    $('document').ready(function() {
-      /* validation */
-      $("#reset-pass-form").validate({
-        rules: {
-          password: {
-            required: true,
-            minlength: 6,
-            maxlength: 15
-          },
-          cpassword: {
-            required: true,
-            equalTo: "#password"
-          },
-        },
-        messages: {
-          password: {
-            required: "Please enter your new password.",
-            minlength: "Password should be at least 6 characters",
-            maxlength: "Password should be less than 15"
-          },
-          cpassword: {
-            required: "Please retype your password.",
-            equalTo: "Passwords don't match"
-          },
-        },
-        errorPlacement: function(error, element) {
-          $(element).closest('.form-group').find('.help-block').html(error.html());
-        },
-        highlight: function(element) {
-          $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-        },
-        unhighlight: function(element, errorClass, validClass) {
-          $(element).closest('.form-group').removeClass('has-error');
-          $(element).closest('.form-group').find('.help-block').html('');
-        },
-        submitHandler: submitForm
-      });
-      /* validation */
+    /* login submit */
+    function submitForm() {
+      $.ajax({
+          //url: 'index.ajax.php',
+          type: 'POST',
+          data: $('#reset-pass-form').serialize(),
+          dataType: 'json'
+        })
+        .done(function(data) {
+          $('#btn-reset-pass').html(
+            '<img src="ajax-loader.gif" style="margin: auto; width:30%;"> &nbsp; Processing...').prop(
+            'disabled', true);
+          $('input[type=email],input[type=password],input[type=checkbox]').prop('disabled', true);
 
-      /* login submit */
-      function submitForm() {
-        $.ajax({
-            //url: 'index.ajax.php',
-            type: 'POST',
-            data: $('#reset-pass-form').serialize(),
-            dataType: 'json'
-          })
-          .done(function(data) {
-            $('#btn-reset-pass').html('<img src="ajax-loader.gif" style="margin: auto; width:30%;"> &nbsp; Processing...').prop('disabled', true);
-            $('input[type=email],input[type=password],input[type=checkbox]').prop('disabled', true);
-
-            setTimeout(function() {
-              if (data.status === 'success') {
-                $("#btn-reset-pass").html('<img src="ajax-loader.gif" style="margin: auto; width:30%;"> &nbsp; Redirecting...');
-                swal("Success!", data.message, "success");
-                setTimeout(' window.location.href = "dashboard"; ', 3000);
-              } else if (data.status === 'error') {
-                $('#errorDiv').slideDown('fast', function() {
-                  swal("Error!", data.message, "error");
-                  $("#reset-pass-form").trigger('reset');
-                  $('input[type=email],input[type=password],input[type=checkbox]').prop('disabled', false);
-                  $('#btn-reset-pass').html('Login').prop('disabled', false);
-                }).delay(3000).slideUp('fast');
-              }
-            }, 3000);
-          })
-          .fail(function() {
-            $("#reset-pass-form").trigger('reset');
-            alert('An unknown error occoured, Please try again Later...');
-          });
-      }
-      /* login submit */
-    });
+          setTimeout(function() {
+            if (data.status === 'success') {
+              $("#btn-reset-pass").html(
+                '<img src="ajax-loader.gif" style="margin: auto; width:30%;"> &nbsp; Redirecting...');
+              swal("Success!", data.message, "success");
+              setTimeout(' window.location.href = "dashboard"; ', 3000);
+            } else if (data.status === 'error') {
+              $('#errorDiv').slideDown('fast', function() {
+                swal("Error!", data.message, "error");
+                $("#reset-pass-form").trigger('reset');
+                $('input[type=email],input[type=password],input[type=checkbox]').prop('disabled', false);
+                $('#btn-reset-pass').html('Login').prop('disabled', false);
+              }).delay(3000).slideUp('fast');
+            }
+          }, 3000);
+        })
+        .fail(function() {
+          $("#reset-pass-form").trigger('reset');
+          alert('An unknown error occoured, Please try again Later...');
+        });
+    }
+    /* login submit */
+  });
   </script>
 
 

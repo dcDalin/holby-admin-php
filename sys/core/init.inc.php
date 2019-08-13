@@ -4,7 +4,7 @@
 	session_start();
 
 	/* Getting root directory of the site */
-	$SITE_DIRECTORY = 'admin';
+	include 'site.directory.php';
 	define('SCHOOL_ROOT', $_SERVER["DOCUMENT_ROOT"]."/$SITE_DIRECTORY/");
 
 	/*
@@ -100,16 +100,16 @@
 
 	//End Initialize All Common Files
 	function array_filter_by_value($my_array, $index, $value) { 
-	    if(is_array($my_array) && count($my_array)>0) { 
-	        foreach(array_keys($my_array) as $key){ 
-	            $temp[$key] = $my_array[$key][$index]; 
-	                 
-	       	    if ($temp[$key] == $value){ 
-	                $new_array[$key] = $my_array[$key]; 
-	            } 
-	        } 
-	    } 
-	    return $new_array; 
+		if(is_array($my_array) && count($my_array)>0) { 
+			foreach(array_keys($my_array) as $key){ 
+				$temp[$key] = $my_array[$key][$index]; 
+
+				if ($temp[$key] == $value){ 
+					$new_array[$key] = $my_array[$key]; 
+				} 
+			} 
+		} 
+		return $new_array; 
 	} 
 	// Jeremy Scripts End
 ?>
