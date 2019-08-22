@@ -24,7 +24,8 @@
       <?php
         if (in_array($_SESSION['userEmail'], $SUPER_USER_EMAIL)) {
 			?>
-      <li class="<?= ($activePage == 'slider-new' || $activePage == 'slider-view' || $activePage == 'slider-edit') ? 'active':'treeview'; ?>">
+      <li
+        class="<?= ($activePage == 'slider-new' || $activePage == 'slider-view' || $activePage == 'slider-edit') ? 'active':'treeview'; ?>">
         <a href="#"><i class="fa fa-file"></i> <span>Content Control</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -54,12 +55,31 @@
                   </li>
                 </ul>
               </li><!-- /.third level-->
+
+              <li class="treeview">
+                <a href="#">
+                  Partner Logos
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="partner-logo-new">Add Partner Logo</a>
+                  </li>
+                  <li>
+                    <a href="partner-logo-view">View Partner Image(s)</a>
+                  </li>
+                </ul>
+              </li><!-- /.third level-->
             </ul>
+
+
           </li><!-- /.second level-->
         </ul>
       </li>
 
-      <li class="<?= ($activePage == 'admins' || $activePage == 'admins-roles' || $activePage == 'admins-edit') ? 'active':'treeview'; ?>">
+      <li
+        class="<?= ($activePage == 'admins' || $activePage == 'admins-roles' || $activePage == 'admins-edit') ? 'active':'treeview'; ?>">
         <a href="#"><i class="fa fa-user"></i> <span>Admins</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -78,7 +98,8 @@
       // Check if logged in user is a blogger
       if($authIsBlogger == 'true' || in_array($_SESSION['userEmail'], $SUPER_USER_EMAIL)){
         ?>
-      <li class="<?= ($activePage == 'blog-new' || $activePage == 'blog-view' || $activePage == 'blog-view-all' || $activePage == 'blog-edit') ? 'active':'treeview'; ?>">
+      <li
+        class="<?= ($activePage == 'blog-new' || $activePage == 'blog-view' || $activePage == 'blog-view-all' || $activePage == 'blog-edit') ? 'active':'treeview'; ?>">
         <a href="#"><i class="fa fa-rss"></i> <span>Blogs</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
