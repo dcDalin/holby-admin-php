@@ -71,6 +71,23 @@
                   </li>
                 </ul>
               </li><!-- /.third level-->
+
+              <li class="treeview">
+                <a href="#">
+                  Testimonials
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="testimonial-new">Add Testimonial</a>
+                  </li>
+                  <li>
+                    <a href="testimonial-view">View Testimonial(s)</a>
+                  </li>
+                </ul>
+              </li><!-- /.third level-->
+
             </ul>
 
 
