@@ -15,9 +15,9 @@ if(filter_has_var(INPUT_POST, 'btn-create-admin')){
 
     $user_password = substr(md5(microtime()),rand(0,26),6);
     $password = md5($user_password);
- 
+
     $response = array();
- 
+
     // Check if email and password are correct 
     $query = $common -> Insert("
       INSERT INTO tbl_admin (firstName, lastName, email, gender, phoneNumber, idNumber, pass)
@@ -27,9 +27,6 @@ if(filter_has_var(INPUT_POST, 'btn-create-admin')){
       $response['status'] = 'error'; // could not create user
       $response['message'] = 'Sorry, Could not create new Admin'; 
     }else if($query){
-      $response['status'] = 'success';  
-      $response['message'] = 'New Admin successfuly created. Reloading...';  
-
       $message= "
         Hello $firstName
         <br /><br />
@@ -39,11 +36,18 @@ if(filter_has_var(INPUT_POST, 'btn-create-admin')){
         <br /><br />
         $user_password
         <br /><br />
-        Thank you
+        Thank you 
       ";
       $subject = "Holby Training Solutions Admin Account Creation";
   
-      send_mail2($email,$message,$subject, $EMAIL_USERNAME,$EMAIL_PASSWORD);
+      $sendMail = send_mail2($email,$message,$subject,$EMAIL_USERNAME,$EMAIL_PASSWORD, $EMAIL_HOST, $EMAIL_PORT);
+      if($sendMail == 1){
+        $response['status'] = 'success';
+        $response['message'] = 'New Admin successfuly created. Reloading...';
+      }else {
+        $response['status'] = 'error';
+        $response['message'] = 'Could not send email';
+      }
     } 
     echo json_encode($response);
     exit;

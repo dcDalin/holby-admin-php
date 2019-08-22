@@ -42,9 +42,6 @@ if(filter_has_var(INPUT_POST, 'btn-add-role')){
         ");
 
         if($sql){
-          $response['status'] = 'success'; 
-          $response['message'] = 'Success! Role added and email sent. Reloading...'; 
-
           $message= "
             Hello 
             <br /><br />
@@ -54,7 +51,14 @@ if(filter_has_var(INPUT_POST, 'btn-add-role')){
           ";
           $subject = "Holby Training Solutions New Role Added";
       
-          send_mail2($email,$message,$subject, $EMAIL_USERNAME,$EMAIL_PASSWORD);
+          $sendMail = send_mail2($email,$message,$subject,$EMAIL_USERNAME,$EMAIL_PASSWORD, $EMAIL_HOST, $EMAIL_PORT);
+          if($sendMail == 1){
+            $response['status'] = 'success';
+            $response['message'] = 'Success! Role added and email sent. Reloading...';
+          }else {
+            $response['status'] = 'error';
+            $response['message'] = 'Could not send email';
+          }
 
         }else if(!$sql){
           $response['status'] = 'error'; 
@@ -102,9 +106,6 @@ if(filter_has_var(INPUT_POST, 'btn-remove-role')){
       ");
 
       if($sql2){
-        $response['status'] = 'success'; 
-        $response['message'] = 'Role has been removed. Reloading...'; 
-
         $message= "
             Hello 
             <br /><br />
@@ -114,7 +115,14 @@ if(filter_has_var(INPUT_POST, 'btn-remove-role')){
           ";
           $subject = "Holby Training Solutions New Role Removed";
       
-          send_mail2($email,$message,$subject, $EMAIL_USERNAME,$EMAIL_PASSWORD);
+          $sendMail = send_mail2($email,$message,$subject,$EMAIL_USERNAME,$EMAIL_PASSWORD, $EMAIL_HOST, $EMAIL_PORT);
+          if($sendMail == 1){
+            $response['status'] = 'success';
+            $response['message'] = 'Role has been removed. Reloading...';
+          }else {
+            $response['status'] = 'error';
+            $response['message'] = 'Could not send email';
+          }
 
       }else if(!$sql2){
         $response['status'] = 'error'; 
