@@ -81,22 +81,27 @@
                   <div class="col-md-12">
                     <label>Course Duration</label>
                     <div class="form-group">
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label>Months</label>
                         <input type="number" class="form-control" name="months" id="months" value="0">
                         <span class="help-block" id="error"></span>
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
+                        <label>Weeks</label>
+                        <input type="number" class="form-control" name="weeks" id="weeks" value="0">
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-2">
                         <label>Days</label>
                         <input type="number" class="form-control" name="days" id="days" value="0">
                         <span class="help-block" id="error"></span>
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label>Hours</label>
                         <input type="number" class="form-control" name="hours" id="hours" value="0">
                         <span class="help-block" id="error"></span>
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label>Minutes</label>
                         <input type="number" class="form-control" name="minutes" id="minutes" value="0">
                         <span class="help-block" id="error"></span>

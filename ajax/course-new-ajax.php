@@ -13,6 +13,7 @@ if(filter_has_var(INPUT_POST, 'btn-create-course')){
   try {
     $title = trim($_POST['title']);
     $months = trim($_POST['months']);
+    $weeks = trim($_POST['weeks']);
     $days = trim($_POST['days']);
     $hours = trim($_POST['hours']); 
     $minutes = trim($_POST['minutes']);
@@ -52,8 +53,8 @@ if(filter_has_var(INPUT_POST, 'btn-create-course')){
     }
     
     $sql = $common -> Insert("
-      INSERT INTO tbl_course (created_by, title, months, days, hours, minutes, level, thumbnail)
-      VALUES ('".$createdBy."', '".$title."', '".$months."', '".$days."', '".$hours."', '".$minutes."', '".$level."', '".$userpic."')
+      INSERT INTO tbl_course (created_by, title, months, weeks, days, hours, minutes, level, thumbnail)
+      VALUES ('".$createdBy."', '".$title."', '".$months."', '".$weeks."', '".$days."', '".$hours."', '".$minutes."', '".$level."', '".$userpic."')
     ");
 
     if($sql){

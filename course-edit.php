@@ -10,6 +10,7 @@
     foreach($result as $row){
       $title = $row['title'];
       $months = $row['months'];
+      $weeks = $row['weeks'];
       $days = $row['days'];
       $hours = $row['hours'];
       $minutes = $row['minutes'];
@@ -108,6 +109,11 @@
                         <label>Months</label>
                         <input type="number" class="form-control" name="months" id="months"
                           value="<?php echo $months; ?>">
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label>Weeks</label>
+                        <input type="number" class="form-control" name="weeks" id="weeks" value="<?php echo $weeks; ?>">
                         <span class="help-block" id="error"></span>
                       </div>
                       <div class="form-group col-md-3">

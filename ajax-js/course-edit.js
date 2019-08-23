@@ -14,6 +14,10 @@ $("document").ready(function(e) {
         required: true,
         lessThan: 12
       },
+      weeks: {
+        required: true,
+        lessThan: 4
+      },
       days: {
         required: true,
         lessThan: 31
@@ -39,6 +43,10 @@ $("document").ready(function(e) {
       months: {
         required: "What is the duration? Set 0 if none",
         lessThan: "Should be less than 12 months"
+      },
+      weeks: {
+        required: "What is the duration? Set 0 if none",
+        lessThan: "Should be less than 4 weeks"
       },
       days: {
         required: "What is the duration? Set 0 if none",

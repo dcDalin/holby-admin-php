@@ -14,6 +14,7 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
     $id = intval($_POST['courseId']);
     $title = trim($_POST['title']);
     $months = trim($_POST['months']);
+    $weeks = trim($_POST['weeks']);
     $days = trim($_POST['days']);
     $hours = trim($_POST['hours']);
     $minutes = trim($_POST['minutes']);
@@ -32,6 +33,7 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
         SET
           title='".$title."',
           months='".$months."',
+          weeks='".$weeks."',
           days='".$days."',
           hours='".$hours."',
           minutes='".$minutes."',
@@ -79,6 +81,7 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
         SET
           title='".$title."',
           months='".$months."',
+          weeks='".$weeks."',
           days='".$days."',
           hours='".$hours."',
           minutes='".$minutes."',
