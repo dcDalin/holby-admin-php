@@ -1,13 +1,30 @@
 $("document").ready(function(e) {
+  $.validator.addMethod("lessThan", function(value, element, param) {
+    var i = parseFloat(value);
+    var j = parseFloat(param);
+    return i < j ? true : false;
+  });
   $("#edit-course-form").validate({
     rules: {
       title: {
         required: true,
         minlength: 5
       },
-      duration: {
+      months: {
         required: true,
-        minlength: 1
+        lessThan: 12
+      },
+      days: {
+        required: true,
+        lessThan: 31
+      },
+      hours: {
+        required: true,
+        lessThan: 24
+      },
+      minutes: {
+        required: true,
+        lessThan: 60
       },
       level: {
         required: true,
@@ -19,9 +36,21 @@ $("document").ready(function(e) {
         required: "What is the course title?",
         minlength: "Course title should be at least 5 characters"
       },
-      duration: {
-        required: "What is the duration?",
-        minlength: "Duration should be at least 1 character"
+      months: {
+        required: "What is the duration? Set 0 if none",
+        lessThan: "Should be less than 12 months"
+      },
+      days: {
+        required: "What is the duration? Set 0 if none",
+        lessThan: "Should be less than 31 days"
+      },
+      hours: {
+        required: "What is the duration? Set 0 if none",
+        lessThan: "Should be less than 24 hours"
+      },
+      minutes: {
+        required: "What is the duration? Set 0 if none",
+        lessThan: "Should be less than 60 minutes"
       },
       level: {
         required: "What is the level?",

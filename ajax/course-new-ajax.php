@@ -12,18 +12,21 @@ if($_SESSION['UID'] == ''){
 if(filter_has_var(INPUT_POST, 'btn-create-course')){
   try {
     $title = trim($_POST['title']);
-    $duration = trim($_POST[ 'duration' ]);
+    $months = trim($_POST['months']);
+    $days = trim($_POST['days']);
+    $hours = trim($_POST['hours']); 
+    $minutes = trim($_POST['minutes']);
     $level = trim($_POST['level']);
     $createdBy = $_SESSION['UID'];
 
     $imgFile = $_FILES['thumbnail']['name'];
     $tmp_dir = $_FILES['thumbnail']['tmp_name'];
-    $imgSize = $_FILES['thumbnail']['size'];
+    $imgSize = $_FILES['thumbnail']['size']; 
 
     $response = array();
 
     $upload_dir = '../uploads/course_thumbnails/'; // upload directory
- 
+
     $imgExt = strtolower(pathinfo($imgFile, PATHINFO_EXTENSION)); // get image extension
     
     // valid image extensions
@@ -49,8 +52,8 @@ if(filter_has_var(INPUT_POST, 'btn-create-course')){
     }
     
     $sql = $common -> Insert("
-      INSERT INTO tbl_course (created_by, title, duration, level, thumbnail)
-      VALUES ('".$createdBy."', '".$title."', '".$duration."', '".$level."', '".$userpic."')
+      INSERT INTO tbl_course (created_by, title, months, days, hours, minutes, level, thumbnail)
+      VALUES ('".$createdBy."', '".$title."', '".$months."', '".$days."', '".$hours."', '".$minutes."', '".$level."', '".$userpic."')
     ");
 
     if($sql){

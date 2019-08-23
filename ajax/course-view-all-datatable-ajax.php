@@ -10,7 +10,7 @@
   $results = $common -> GetRows("
     SELECT
       tbl_admin.id, tbl_admin.firstName, tbl_admin.lastName,
-      tbl_course.id AS course_id, tbl_course.created_by, tbl_course.title, tbl_course.duration, tbl_course.level, tbl_course.thumbnail
+      tbl_course.id AS course_id, tbl_course.created_by, tbl_course.title, tbl_course.months, tbl_course.days, tbl_course.hours, tbl_course.minutes, tbl_course.level, tbl_course.thumbnail
 
     FROM 
       tbl_admin, tbl_course
@@ -22,7 +22,10 @@
   foreach ($results as $row){
     $id = $row['course_id'];
     $title = $row['title'];
-    $duration = $row['duration'];
+    $months = $row['months'];
+    $days = $row['days'];
+    $hours = $row['hours'];
+    $minutes = $row['minutes'];
     $level = $row['level'];
     $thumbnail = $row['thumbnail'];
 
@@ -31,7 +34,9 @@
         <img src="uploads/course_thumbnails/'.$thumbnail.'" height="100px" width="80px"/>
       ', 
       "title" => $title,
-      "duration" => $duration,
+      "duration" => '
+        '.$months.' Months, '.$days.' Days, '.$hours.' Hours, '.$minutes.' Minutes,
+      ',
       "level" => $level,
       "actions" => '
         &nbsp;

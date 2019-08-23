@@ -9,7 +9,10 @@
 
     foreach($result as $row){
       $title = $row['title'];
-      $duration = $row['duration'];
+      $months = $row['months'];
+      $days = $row['days'];
+      $hours = $row['hours'];
+      $minutes = $row['minutes'];
       $level = $row['level'];
       $thumbnail = $row['thumbnail'];
     }
@@ -87,14 +90,6 @@
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
-                      <label>Duration</label>
-                      <input type="text" class="form-control" placeholder="How long will the course take"
-                        name="duration" id="duration" value="<?php echo $duration; ?>">
-                      <span class="help-block" id="error"></span>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
                       <label>Level</label>
                       <select class="form-control select2" name="level" id="level" style="width: 100%;">
                         <option selected="selected" value="<?php echo $level; ?>"><?php echo $level; ?></option>
@@ -104,6 +99,33 @@
                         <option value="Bronze">Bronze</option>
                       </select>
                       <span class="help-block" id="error"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Course Duration</label>
+                    <div class="form-group">
+                      <div class="form-group col-md-3">
+                        <label>Months</label>
+                        <input type="number" class="form-control" name="months" id="months"
+                          value="<?php echo $months; ?>">
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label>Days</label>
+                        <input type="number" class="form-control" name="days" id="days" value="<?php echo $days; ?>">
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label>Hours</label>
+                        <input type="number" class="form-control" name="hours" id="hours" value="<?php echo $hours; ?>">
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label>Minutes</label>
+                        <input type="number" class="form-control" name="minutes" id="minutes"
+                          value="<?php echo $minutes; ?>">
+                        <span class="help-block" id="error"></span>
+                      </div>
                     </div>
                   </div>
                   <div class="col-md-6">

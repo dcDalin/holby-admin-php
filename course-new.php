@@ -62,18 +62,11 @@
                   <div class="col-md-8">
                     <div class="form-group">
                       <label>Title</label>
-                      <input type="text" class="form-control" placeholder="Title of the Course" name="title" id="title" value="<?php echo $title; ?>">
+                      <input type="text" class="form-control" placeholder="Title of the Course" name="title" id="title">
                       <span class="help-block" id="error"></span>
                     </div>
                   </div>
                   <div class="col-md-4">
-                    <div class="form-group">
-                      <label>Duration</label>
-                      <input type="text" class="form-control" placeholder="How long will the course take" name="duration" id="duration" value="<?php echo $duration; ?>">
-                      <span class="help-block" id="error"></span>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
                     <div class="form-group">
                       <label>Level</label>
                       <select class="form-control select2" name="level" id="level" style="width: 100%;">
@@ -85,17 +78,43 @@
                       <span class="help-block" id="error"></span>
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-12">
+                    <label>Course Duration</label>
+                    <div class="form-group">
+                      <div class="form-group col-md-3">
+                        <label>Months</label>
+                        <input type="number" class="form-control" name="months" id="months" value="0">
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label>Days</label>
+                        <input type="number" class="form-control" name="days" id="days" value="0">
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label>Hours</label>
+                        <input type="number" class="form-control" name="hours" id="hours" value="0">
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label>Minutes</label>
+                        <input type="number" class="form-control" name="minutes" id="minutes" value="0">
+                        <span class="help-block" id="error"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
                     <div class="form-group">
                       <label>Thumbnail</label>
-                      <input type="file" class="form-control" name="thumbnail" id="thumbnail" accept="image/*" value="<?php echo $thumbnail; ?>">
+                      <input type="file" class="form-control" name="thumbnail" id="thumbnail" accept="image/*">
                       <span class="help-block" id="error"></span>
                     </div>
                   </div>
 
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-create-course" id="btn-create-course" value="btn-create-course">
+                      <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-create-course"
+                        id="btn-create-course" value="btn-create-course">
                         Add Course
                       </button>
                     </div>

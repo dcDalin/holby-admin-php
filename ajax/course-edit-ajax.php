@@ -13,7 +13,10 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
   try {
     $id = intval($_POST['courseId']);
     $title = trim($_POST['title']);
-    $duration = trim($_POST[ 'duration' ]);
+    $months = trim($_POST['months']);
+    $days = trim($_POST['days']);
+    $hours = trim($_POST['hours']);
+    $minutes = trim($_POST['minutes']);
     $level = trim($_POST['level']);
     $thumbnail = trim($_POST['courseThumbnail']);
 
@@ -28,7 +31,10 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
         UPDATE tbl_course
         SET
           title='".$title."',
-          duration='".$duration."',
+          months='".$months."',
+          days='".$days."',
+          hours='".$hours."',
+          minutes='".$minutes."',
           level='".$level."'
         WHERE 
           id='".$id."'
@@ -72,7 +78,10 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
         UPDATE tbl_course
         SET
           title='".$title."',
-          duration='".$duration."',
+          months='".$months."',
+          days='".$days."',
+          hours='".$hours."',
+          minutes='".$minutes."',
           level='".$level."',
           thumbnail='".$userpic."'
         WHERE 

@@ -84,7 +84,7 @@ $("document").ready(function(e) {
                 .delay(3000)
                 .slideUp("fast");
               $("#btn-create-slider")
-                .html("Add Slider Item")
+                .html("Add Testimonials")
                 .prop("disabled", false);
             } else {
               $("#errorDiv")
@@ -97,7 +97,7 @@ $("document").ready(function(e) {
                 .delay(3000)
                 .slideUp("fast");
               $("#btn-create-slider")
-                .html("Add Slider Item")
+                .html("Add Testimonial")
                 .prop("disabled", false);
             }
           }, 3000);
