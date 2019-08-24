@@ -64,7 +64,7 @@
                   <div class="form-group">
                     <label>About Text</label>
                     <textarea class="required form-control" name="blogBody" id="blogBody" rows="10" cols="80">
-                    <?php echo $text; ?>
+                      <?php echo $text; ?>
                     </textarea>
                     <span class="help-block" id="error"></span>
                   </div>

@@ -11,21 +11,20 @@ if($_SESSION['UID'] == ''){
 /* Start ajax login process */
 if(filter_has_var(INPUT_POST, 'btn-create-blog')){
   try { 
-    $blogBody = trim($_POST['blogBody']);
+    $blogBody = $_POST['blogBody'];
 
     $response = array();
 
     if(strlen($blogBody) <= 200){
       $response['status'] = 'error'; 
       $response['message'] = 'About text should be at least 200 characters'; 
-    }else {
+    }else if(strlen($blogBody) > 200){
       $id = 1;
       $sql = $common -> Update("
-        UPDATE tbl_about_text
-        SET
-          text='".$blogBody."'
-        WHERE
-          id='".$id."'
+        UPDATE tbl_about_text 
+          SET text='".$blogBody."' 
+        WHERE 
+          id=1
       ");
 
       if($sql){
