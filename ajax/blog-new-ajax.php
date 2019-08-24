@@ -14,7 +14,7 @@ if($_SESSION['UID'] == ''){
 if(filter_has_var(INPUT_POST, 'btn-create-blog')){
   try {
     $blogTitle = trim($_POST['blogTitle']); 
-    $blogBody = $_POST[ 'blogBody' ]; 
+    $blogBody = $_POST['blogBody']; 
 
     $imgFile = $_FILES['thumbnail']['name'];
     $tmp_dir = $_FILES['thumbnail']['tmp_name'];

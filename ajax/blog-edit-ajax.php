@@ -13,7 +13,7 @@ if(filter_has_var(INPUT_POST, 'btn-create-blog')){
   try { 
     $id = intval($_POST['blogId']);
     $blogTitle = trim($_POST['blogTitle']);
-    $blogBody = $_POST[ 'blogBody' ];
+    $blogBody = $_POST['blogBody'];
     $thumbnail = trim($_POST['blogThumbnail']); 
 
     $imgFile = $_FILES['thumbnail']['name'];

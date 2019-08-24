@@ -92,6 +92,56 @@
 
 
           </li><!-- /.second level-->
+          <li class="treeview">
+            <a href="#"><i class="fa fa-info"></i> <span>About Page</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+
+            <ul class="treeview-menu">
+              <li class="treeview">
+                <a href="about-text" id="about-text">
+                  About Text
+                </a>
+              </li><!-- /.third level-->
+
+              <li class="treeview">
+                <a href="#">
+                  Partner Logos
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="partner-logo-new">Add Partner Logo</a>
+                  </li>
+                  <li>
+                    <a href="partner-logo-view">View Partner Image(s)</a>
+                  </li>
+                </ul>
+              </li><!-- /.third level-->
+
+              <li class="treeview">
+                <a href="#">
+                  Testimonials
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="testimonial-new">Add Testimonial</a>
+                  </li>
+                  <li>
+                    <a href="testimonial-view">View Testimonial(s)</a>
+                  </li>
+                </ul>
+              </li><!-- /.third level-->
+
+            </ul>
+
+
+          </li><!-- /.second level-->
         </ul>
       </li>
 
@@ -203,3 +253,9 @@
   </section>
   <!-- /.sidebar -->
 </aside>
+
+<script>
+document.getElementById("about-text").onclick = function() {
+  location.href = "about-text";
+};
+</script>
