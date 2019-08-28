@@ -92,6 +92,8 @@
 
 
           </li><!-- /.second level-->
+
+
           <li class="treeview">
             <a href="#"><i class="fa fa-info"></i> <span>About Page</span>
               <span class="pull-right-container">
@@ -105,6 +107,23 @@
                   About Text
                 </a>
               </li><!-- /.third level-->
+              <li class="treeview">
+                <a href="#">
+                  Meet The Team
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+
+                <ul class="treeview-menu">
+                  <li>
+                    <a href="teammember-new">Add Team Member</a>
+                  </li>
+                  <li>
+                    <a href="teammember-view">View Team Member(s)</a>
+                  </li>
+                </ul>
+
+              </li><!-- /.third level-->
+
 
               <li class="treeview">
                 <a href="#">
@@ -118,22 +137,6 @@
                   </li>
                   <li>
                     <a href="partner-logo-view">View Partner Image(s)</a>
-                  </li>
-                </ul>
-              </li><!-- /.third level-->
-
-              <li class="treeview">
-                <a href="#">
-                  Testimonials
-                  <i class="fa fa-angle-left pull-right"></i>
-                </a>
-
-                <ul class="treeview-menu">
-                  <li>
-                    <a href="testimonial-new">Add Testimonial</a>
-                  </li>
-                  <li>
-                    <a href="testimonial-view">View Testimonial(s)</a>
                   </li>
                 </ul>
               </li><!-- /.third level-->
