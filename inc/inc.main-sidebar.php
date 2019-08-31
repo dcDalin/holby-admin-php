@@ -115,6 +115,9 @@
 
                 <ul class="treeview-menu">
                   <li>
+                    <a href="teammember-visibility">Control Visibility</a>
+                  </li>
+                  <li>
                     <a href="teammember-new">Add Team Member</a>
                   </li>
                   <li>

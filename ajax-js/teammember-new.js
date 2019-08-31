@@ -72,7 +72,7 @@ $("document").ready(function(e) {
     submitHandler: function(form) {
       var formData = new FormData(form);
       $.ajax({
-        url: "ajax/teammember-new.php",
+        url: "ajax/team-member-new.php",
         type: "POST",
         data: formData,
         dataType: "json",

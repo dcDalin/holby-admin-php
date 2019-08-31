@@ -32,7 +32,7 @@ if(filter_has_var(INPUT_POST, 'btn-create-team-member')){
           name='".$name."',
           isPartner='".$isPartner."',
           isTrainer='".$isTrainer."',
-          isConsultant='".$isTrainer."',
+          isConsultant='".$isConsultant."',
           bio='".$bio."'
         WHERE 
           id='".$id."'
