@@ -109,6 +109,40 @@
                     </div>
                   </div>
                   <div class="col-md-12">
+                    <label>Type of Course / Solution</label>
+                    <div class="form-group">
+                      <div class="form-group col-md-2">
+                        <label>Individual</label>
+                        <select class="form-control" name="individual" id="individual">
+                          <option value="">------</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label>Organizational</label>
+                        <select class="form-control" name="organizational" id="organizational">
+                          <option value="">------</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                        <span class="help-block" id="error"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Price</label>
+                    <div class="form-group">
+                      <div class="form-group col-md-2">
+                        <label>Kshs.</label>
+                        <input type="number" class="form-control" name="price" id="price" value="0">
+                        <span class="help-block" id="error"></span>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="col-md-12">
                     <div class="form-group">
                       <label>Thumbnail</label>
                       <input type="file" class="form-control" name="thumbnail" id="thumbnail" accept="image/*">
@@ -126,8 +160,6 @@
                   </div>
                 </div>
               </div>
-
-
           </div>
 
           <!-- /.row -->

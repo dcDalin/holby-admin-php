@@ -207,38 +207,12 @@
         </ul>
       </li>
 
-      <li class="<?= ($activePage == 'new-company' || $activePage == 'view-companies') ? 'active':'treeview'; ?>">
-        <a href="#"><i class="fa fa-link"></i> <span>Partners</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="new-company">New Partner</a></li>
-          <li><a href="view-companies">View Partners</a></li>
-        </ul>
-      </li>
-
-      <li class="<?= ($activePage == 'new-contact' || $activePage == 'view-contacts') ? 'active':'treeview'; ?>">
-        <a href="#"><i class="fa fa-link"></i> <span>Contacts</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="new-contact">New Contact</a></li>
-          <li><a href="view-contacts">View Contacts</a></li>
-        </ul>
-      </li>
 
 
-      <li class=""><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-      <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-    </ul>
-    <!-- /.sidebar-menu -->
+      <!-- /.sidebar-menu -->
 
-    <!-- Sidebar Menu -->
-    <!-- <ul class="sidebar-menu" data-widget="tree">
+      <!-- Sidebar Menu -->
+      <!-- <ul class="sidebar-menu" data-widget="tree">
 			<li class="header">HEADER</li>
 			
 			<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
@@ -255,7 +229,7 @@
 			</ul>
 			</li>
 		</ul> -->
-    <!-- /.sidebar-menu -->
+      <!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
 </aside>

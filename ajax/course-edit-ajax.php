@@ -37,7 +37,10 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
           days='".$days."',
           hours='".$hours."',
           minutes='".$minutes."',
-          level='".$level."'
+          level='".$level."',
+          individual='".$individual."',
+          organizational='".$organizational."',
+          price='".$price."',
         WHERE 
           id='".$id."'
       ");
@@ -86,6 +89,9 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
           hours='".$hours."',
           minutes='".$minutes."',
           level='".$level."',
+          individual='".$individual."',
+          organizational='".$organizational."',
+          price='".$price."',
           thumbnail='".$userpic."'
         WHERE 
           id='".$id."'

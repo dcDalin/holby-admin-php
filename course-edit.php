@@ -15,6 +15,9 @@
       $hours = $row['hours'];
       $minutes = $row['minutes'];
       $level = $row['level'];
+      $individual = $row['individual'];
+      $organizational = $row['organizational'];
+      $price = $row['price'];
       $thumbnail = $row['thumbnail'];
     }
   }
@@ -105,33 +108,69 @@
                   <div class="col-md-12">
                     <label>Course Duration</label>
                     <div class="form-group">
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label>Months</label>
                         <input type="number" class="form-control" name="months" id="months"
                           value="<?php echo $months; ?>">
                         <span class="help-block" id="error"></span>
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label>Weeks</label>
                         <input type="number" class="form-control" name="weeks" id="weeks" value="<?php echo $weeks; ?>">
                         <span class="help-block" id="error"></span>
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label>Days</label>
                         <input type="number" class="form-control" name="days" id="days" value="<?php echo $days; ?>">
                         <span class="help-block" id="error"></span>
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label>Hours</label>
                         <input type="number" class="form-control" name="hours" id="hours" value="<?php echo $hours; ?>">
                         <span class="help-block" id="error"></span>
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label>Minutes</label>
                         <input type="number" class="form-control" name="minutes" id="minutes"
                           value="<?php echo $minutes; ?>">
                         <span class="help-block" id="error"></span>
                       </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Type of Course / Solution</label>
+                    <div class="form-group">
+                      <div class="form-group col-md-2">
+                        <label>Individual</label>
+                        <select class="form-control" name="individual" id="individual">
+                          <option value="<?php echo $individual; ?>"><?php echo $individual; ?></option>
+                          <option value="">------</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                        <span class="help-block" id="error"></span>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label>Organizational</label>
+                        <select class="form-control" name="organizational" id="organizational">
+                          <option value="<?php echo $organizational; ?>"><?php echo $organizational; ?></option>
+                          <option value="">------</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                        <span class="help-block" id="error"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <label>Price</label>
+                    <div class="form-group">
+                      <div class="form-group col-md-2">
+                        <label>Kshs.</label>
+                        <input type="number" class="form-control" name="price" id="price" value="<?php echo $price; ?>">
+                        <span class="help-block" id="error"></span>
+                      </div>
+
                     </div>
                   </div>
                   <div class="col-md-6">

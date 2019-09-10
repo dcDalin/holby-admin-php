@@ -1,4 +1,10 @@
 <?php include_once('inc/inc.logged.in.top.php'); ?>
+<?php
+  if (($authIsBlogger != 'true') && (!in_array($_SESSION['userEmail'], $SUPER_USER_EMAIL))) {
+    header("Location: index"); /* Redirect browser */
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html>
 

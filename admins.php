@@ -95,7 +95,8 @@
                 <div class="col-md-5">
                   <div class="form-group">
                     <label>Phone Number</label>
-                    <input type="tel" class="form-control" placeholder="Phone Number" name="phoneNumber" id="phoneNumber">
+                    <input type="tel" class="form-control" placeholder="Phone Number" name="phoneNumber"
+                      id="phoneNumber">
                     <span class="help-block" id="error"></span>
                   </div>
                 </div>
@@ -115,7 +116,8 @@
                 <!-- /.col -->
                 <div class="col-md-3">
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-create-admin" id="btn-create-admin">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn-create-admin"
+                      id="btn-create-admin">
                       Create Admin
                     </button>
                   </div>
@@ -171,33 +173,33 @@
 
   <!-- Show Data Table -->
   <script type="text/javascript">
-    $(document).ready(function() {
-      $('#tbl-users').DataTable({
-        "ajax": "ajax/get-users.php",
-        "columns": [{
-            "data": "fname"
-          },
-          {
-            "data": "lname"
-          },
-          {
-            "data": "email"
-          },
-          {
-            "data": "gender"
-          },
-          {
-            "data": "phoneNumber"
-          },
-          {
-            "data": "idNumber"
-          },
-          {
-            "data": "actions"
-          }
-        ]
-      });
+  $(document).ready(function() {
+    $('#tbl-users').DataTable({
+      "ajax": "ajax/get-users.php",
+      "columns": [{
+          "data": "fname"
+        },
+        {
+          "data": "lname"
+        },
+        {
+          "data": "email"
+        },
+        {
+          "data": "gender"
+        },
+        {
+          "data": "phoneNumber"
+        },
+        {
+          "data": "idNumber"
+        },
+        {
+          "data": "actions"
+        }
+      ]
     });
+  });
   </script>
 
 </body>

@@ -31,6 +31,15 @@ $("document").ready(function(e) {
         required: true,
         lessThan: 60
       },
+      individual: {
+        required: true
+      },
+      organizational: {
+        required: true
+      },
+      price: {
+        required: true
+      },
       thumbnail: {
         required: true
       },
@@ -63,6 +72,15 @@ $("document").ready(function(e) {
       minutes: {
         required: "What is the duration? Set 0 if none",
         lessThan: "Should be less than 60 minutes"
+      },
+      individual: {
+        required: "Pick 'Yes' or 'No'"
+      },
+      organizational: {
+        required: "Pick 'Yes' or 'No'"
+      },
+      price: {
+        required: "Price is required"
       },
       thumbnail: {
         required: "Select a thumbnail"

@@ -18,6 +18,9 @@ if(filter_has_var(INPUT_POST, 'btn-create-course')){
     $hours = trim($_POST['hours']); 
     $minutes = trim($_POST['minutes']);
     $level = trim($_POST['level']);
+    $individual = trim($_POST['individual']);
+    $organizational = trim($_POST['organizational']);
+    $price = trim($_POST['price']);
     $createdBy = $_SESSION['UID'];
 
     $imgFile = $_FILES['thumbnail']['name'];
@@ -53,8 +56,8 @@ if(filter_has_var(INPUT_POST, 'btn-create-course')){
     }
     
     $sql = $common -> Insert("
-      INSERT INTO tbl_course (created_by, title, months, weeks, days, hours, minutes, level, thumbnail)
-      VALUES ('".$createdBy."', '".$title."', '".$months."', '".$weeks."', '".$days."', '".$hours."', '".$minutes."', '".$level."', '".$userpic."')
+      INSERT INTO tbl_course (created_by, title, months, weeks, days, hours, minutes, level, individual, organizational, price, thumbnail)
+      VALUES ('".$createdBy."', '".$title."', '".$months."', '".$weeks."', '".$days."', '".$hours."', '".$minutes."', '".$level."', '".$individual."', '".$organizational."', '".$price."', '".$userpic."')
     ");
 
     if($sql){
