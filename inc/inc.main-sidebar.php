@@ -209,10 +209,56 @@
 
 
 
-      <!-- /.sidebar-menu -->
+      <li class="<?= ($activePage == 'consultancy-new' || $activePage == 'consultancy-view') ? 'active':'treeview'; ?>">
+        <a href="#"><i class="fa fa-wrench"></i> <span>Services</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
 
-      <!-- Sidebar Menu -->
-      <!-- <ul class="sidebar-menu" data-widget="tree">
+        <ul class="treeview-menu">
+          <li class="treeview">
+            <a href="#"><i class="fa fa-tasks"></i> <span>Consultancy</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+
+            <ul class="treeview-menu">
+              <li><a href="consultancy-new" id="view-consultancy">New Consultancy Type</a></li>
+              <li><a href="consultancy-view" id="view-consultancy">View Consultancy Type(s)</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-users"></i> <span>Executive Coaching</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+
+            <ul class="treeview-menu">
+              <li class="treeview">
+                <a href="#">View Requests</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+
+
+
+
+
+
+    </ul>
+
+
+
+    <!-- /.sidebar-menu -->
+
+    <!-- Sidebar Menu -->
+    <!-- <ul class="sidebar-menu" data-widget="tree">
 			<li class="header">HEADER</li>
 			
 			<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
@@ -229,7 +275,7 @@
 			</ul>
 			</li>
 		</ul> -->
-      <!-- /.sidebar-menu -->
+    <!-- /.sidebar-menu -->
   </section>
   <!-- /.sidebar -->
 </aside>
