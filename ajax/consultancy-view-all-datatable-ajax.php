@@ -14,7 +14,6 @@
     SELECT COUNT(*) FROM tbl_consultancy
   ");
 
-  // if user got no blogs  
   if($total_rows < 1){ 
     $blog_arr[] = array(
       "title" => '<strong>No Consultancy Types</strong>', 
