@@ -70,7 +70,7 @@
       );
   }
   $show_arr = array(
-      'data' => $course_arr,
+    'data' => $course_arr,
   );
   // encoding array to json format    
   echo json_encode($show_arr); 

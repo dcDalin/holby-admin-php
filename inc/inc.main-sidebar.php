@@ -32,6 +32,10 @@
           </span>
         </a>
         <ul class="treeview-menu">
+          <li>
+            <a href="contacts-social-media-links"><i class="fa fa-link"></i> <span>Contacts | Social Media
+                Links</span></a>
+          </li>
           <li class="treeview">
             <a href="#"><i class="fa fa-home"></i> <span>Home Page</span>
               <span class="pull-right-container">
@@ -245,11 +249,54 @@
         </ul>
       </li>
 
+      <li
+        class="<?= ($activePage == 'category-new' || $activePage == 'category-view' || $activePage == 'sub-category-view' || $activePage == 'sub-category-new') ? 'active':'treeview'; ?>">
+        <a href="#"><i class="fa fa-shopping-cart"></i> <span>Store</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
 
+        <ul class="treeview-menu">
+          <li class="treeview">
+            <a href="#"><i class="fa fa-list-alt"></i> <span>Category</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
 
+            <ul class="treeview-menu">
+              <li><a href="category-new" id="category-new">New Category</a></li>
+              <li><a href="category-view" id="category-view">View Categories</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-list-alt"></i> <span>Sub Category</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
 
+            <ul class="treeview-menu">
+              <li><a href="sub-category-new" id="sub-category-new">New Sub Category</a></li>
+              <li><a href="sub-category-view" id="sub-category-view">View Sub Categories</a></li>
+            </ul>
+          </li>
+          <li class="treeview">
+            <a href="#"><i class="fa fa-users"></i> <span>Executive Coaching</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
 
-
+            <ul class="treeview-menu">
+              <li><a href="executive-coaching-description" id="executive-coaching-description">Executive Coaching
+                  Description</a></li>
+              <li><a href="#" id="">View Requests</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
 
     </ul>
 

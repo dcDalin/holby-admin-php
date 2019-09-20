@@ -12,7 +12,7 @@ fclose($siteDirectory);
 $envVariables = fopen("env-variables.php", "w") or die("Unable to open file!");
 $envScript = "
 <?php 
-\$SUPER_USER_EMAIL = array('mcdalinoluoch@gmail.com', 'holbyinvestment@gmail.com ');
+\$SUPER_USER_EMAIL = array('holbyinvestment@gmail.com');
 \$ADMIN_NOTIFICATIONS_EMAIL = 'mcdalinoluoch@gmail.com';
 
 \$DB_HOST = 'localhost';
