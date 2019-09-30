@@ -202,10 +202,7 @@
                   </div>
                 </div>
               </div>
-
-
           </div>
-
           <!-- /.row -->
           </form>
         </div>
@@ -213,7 +210,7 @@
 
 
     </div>
-    <?php 
+    <?php  
 			include 'inc/inc.main-footer.php';
 			?>
     <!-- Wrapper end div -->

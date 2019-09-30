@@ -22,9 +22,6 @@ $("document").ready(function(e) {
       },
       price: {
         required: true
-      },
-      thumbnail: {
-        required: true
       }
     },
     messages: {
@@ -49,9 +46,6 @@ $("document").ready(function(e) {
       },
       price: {
         required: "What's the price?"
-      },
-      thumbnail: {
-        required: "Product image is required"
       }
     },
     errorPlacement: function(error, element) {
@@ -78,7 +72,7 @@ $("document").ready(function(e) {
     submitHandler: function(form) {
       var formData = new FormData(form);
       $.ajax({
-        url: "ajax/product-new-ajax.php",
+        url: "ajax/product-edit-ajax.php",
         type: "POST",
         data: formData,
         dataType: "json",
@@ -108,8 +102,11 @@ $("document").ready(function(e) {
                 .delay(3000)
                 .slideUp("fast");
               $("#btn-submit")
-                .html("Add Product")
+                .html("Edit Product")
                 .prop("disabled", false);
+              setTimeout(function() {
+                location.reload(true);
+              }, 3000);
             } else {
               $("#errorDiv")
                 .slideDown("fast", function() {
