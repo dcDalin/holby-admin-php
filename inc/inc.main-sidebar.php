@@ -91,10 +91,7 @@
                   </li>
                 </ul>
               </li><!-- /.third level-->
-
             </ul>
-
-
           </li><!-- /.second level-->
 
 
@@ -250,7 +247,7 @@
       </li>
 
       <li
-        class="<?= ($activePage == 'category-new' || $activePage == 'category-view' || $activePage == 'sub-category-view' || $activePage == 'sub-category-new') ? 'active':'treeview'; ?>">
+        class="<?= ($activePage == 'category-new' || $activePage == 'category-view' || $activePage == 'sub-category-view' || $activePage == 'sub-category-new' || $activePage == 'product-new' || $activePage == 'product-view') ? 'active':'treeview'; ?>">
         <a href="#"><i class="fa fa-shopping-cart"></i> <span>Store</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -283,16 +280,19 @@
             </ul>
           </li>
           <li class="treeview">
-            <a href="#"><i class="fa fa-users"></i> <span>Executive Coaching</span>
+            <a href="#"><i class="fa fa-shopping-cart"></i> <span>Product</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
 
             <ul class="treeview-menu">
-              <li><a href="executive-coaching-description" id="executive-coaching-description">Executive Coaching
-                  Description</a></li>
-              <li><a href="#" id="">View Requests</a></li>
+              <li>
+                <a href="product-new" id="product-new">
+                  New Product
+                </a>
+              </li>
+              <li><a href="product-view" id="product-view">View Products</a></li>
             </ul>
           </li>
         </ul>

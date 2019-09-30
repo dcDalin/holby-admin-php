@@ -20,7 +20,7 @@
   </div>
 
   <div class="wrapper" id="wrapper">
-    <?php 
+    <?php  
 			include 'inc/inc.main-header.php'; 
 			?>
     <?php 
