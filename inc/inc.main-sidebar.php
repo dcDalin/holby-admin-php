@@ -10,7 +10,6 @@
       <div class="pull-left info">
         <p><?php echo $_SESSION['userFirstName']; ?> <?php echo $_SESSION['userLastName']; ?></p>
         <!-- Status -->
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
 
@@ -205,6 +204,19 @@
         <ul class="treeview-menu">
           <li><a href="course-new">New Course</a></li>
           <li><a href="course-view" id="view-users">View Courses</a></li>
+        </ul>
+      </li>
+
+
+      <li class="<?= ($activePage == 'event-new' || $activePage == 'event-view') ? 'active':'treeview'; ?>">
+        <a href="#"><i class="fa fa-calendar"></i> <span>Events</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="event-new">New Event</a></li>
+          <li><a href="event-view" id="view-users">View Events</a></li>
         </ul>
       </li>
 
