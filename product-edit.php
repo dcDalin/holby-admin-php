@@ -115,6 +115,7 @@ else
                       <select type="text" class="form-control" name="categoryName" id="categoryName">
                         <option selected="selected" value="<?php echo $categoryId; ?>"><?php echo $categoryName; ?>
                         </option>
+                        <option value="">--------</option>
                         <?php
                         $result = $common -> GetRows("
                           SELECT * FROM tbl_category

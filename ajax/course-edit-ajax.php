@@ -40,7 +40,7 @@ if(filter_has_var(INPUT_POST, 'btn-edit-course')){
           level='".$level."',
           individual='".$individual."',
           organizational='".$organizational."',
-          price='".$price."',
+          price='".$price."'
         WHERE 
           id='".$id."'
       ");

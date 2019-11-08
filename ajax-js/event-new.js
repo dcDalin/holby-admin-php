@@ -1,9 +1,4 @@
 $("document").ready(function(e) {
-  $.validator.addMethod("lessThan", function(value, element, param) {
-    var i = parseFloat(value);
-    var j = parseFloat(param);
-    return i < j ? true : false;
-  });
 
   $("#new-course-form").validate({
     rules: {
@@ -142,4 +137,4 @@ $("document").ready(function(e) {
         });
     }
   });
-});
+}); 

@@ -1,4 +1,4 @@
 
 <?php
-$SITE_DIRECTORY = 'admin';
+$SITE_DIRECTORY = 'holby-admin';
 ?>

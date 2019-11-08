@@ -103,7 +103,7 @@
         },
         {
           "data": "longDesc"
-        },
+        }, 
         {
           "data": "actions"
         }

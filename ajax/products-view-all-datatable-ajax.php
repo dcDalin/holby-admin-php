@@ -22,19 +22,7 @@
     AND
       tbl_products.subCategoryId=tbl_sub_category.id
   ");
-  
-  // TODO: Clean up if no records found
-  $total_rows = $common -> CCGetDBValue("
-    SELECT COUNT(*) FROM tbl_consultancy
-  ");
 
-  if($total_rows < 1){ 
-    $blog_arr[] = array(
-      "title" => '<strong>No Consultancy Types</strong>', 
-      "description" => '',
-      "actions" => ''
-    );
-  }
 
   foreach ($results as $row){ 
     $id = $row['productId'];

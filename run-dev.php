@@ -4,7 +4,7 @@
 $siteDirectory = fopen("sys/core/site.directory.php", "w") or die("Unable to open site dir!");
 $siteScript = "
 <?php
-\$SITE_DIRECTORY = 'admin';
+\$SITE_DIRECTORY = 'holby-admin';
 ?>
 ";
 fwrite($siteDirectory, $siteScript);
@@ -19,10 +19,10 @@ $envScript = "
 
 \$DB_HOST = 'localhost';
 \$DB_USER = 'root';
-\$DB_NAME = 'holby';
-\$DB_PASS = 'Password123!';
+\$DB_NAME = 'holbytra_holby';
+\$DB_PASS = '';
 
-\$WEBSITE_URL = 'http://localhost/admin';
+\$WEBSITE_URL = 'http://localhost/holby-admin';
 
 \$EMAIL_USERNAME = 'noreply@holbytrainingsolution.co.ke';
 \$EMAIL_PASSWORD = 'Password123!!!';

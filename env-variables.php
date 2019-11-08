@@ -6,10 +6,10 @@ $ADMIN_NOTIFICATIONS_EMAIL = 'mcdalinoluoch@gmail.com';
 
 $DB_HOST = 'localhost';
 $DB_USER = 'root';
-$DB_NAME = 'holby';
-$DB_PASS = 'Password123!';
+$DB_NAME = 'holbytra_holby';
+$DB_PASS = '';
 
-$WEBSITE_URL = 'http://localhost/admin';
+$WEBSITE_URL = 'http://localhost/holby-admin';
 
 $EMAIL_USERNAME = 'noreply@holbytrainingsolution.co.ke';
 $EMAIL_PASSWORD = 'Password123!!!';
